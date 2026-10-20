@@ -62,7 +62,7 @@ public class Customers {
             if(this.customers[i] == null){
                 continue;
             }
-            
+
             if(this.customers[i].getCustomerId() == customer_id){
                 removedCustomer = this.customers[i];
                 this.customers[i] = null;
@@ -77,10 +77,15 @@ public class Customers {
 
         Customer[] customers = new Customer[this.countNonNull()];
         
+        int newIndex = 0; //make this in order to not go out of bounds on the new array when finding nullpointers
+
         for (int i = 0; i < this.customers.length; i++) {
             if(this.customers[i] != null){
-                customers[i] = this.customers[i];
+                customers[newIndex] = this.customers[i];
+            } else {
+                newIndex--;
             }
+            newIndex++;
         }
 
         return customers;

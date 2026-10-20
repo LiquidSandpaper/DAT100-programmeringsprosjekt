@@ -19,6 +19,7 @@ public class Invoice {
         this.month = month;
         this.usage = usage;
         this.powerPrices = powerPrices;
+        this.amount = 0;
     }
 
     public void computeAmount() {
